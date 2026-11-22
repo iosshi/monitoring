@@ -1,0 +1,3034 @@
+{
+  "metadata": {
+    "harness_version": "1.0.0",
+    "eval_file": "tests\\eval\\kt2_frozen.jsonl",
+    "eval_sha256": "2f9afe6587b4c1ec6e1d7e60c0b25fdb3cd68e72555934786fc20d158d9e97f4",
+    "model": "openai/gpt-oss-120b",
+    "system_prompt_sha256": "677a82eae3b4f80204531092d4142fc345a35f024f990a1aa542aeb9a08784a5",
+    "temperature": 0,
+    "seed": null,
+    "label": "kt2-full-fixed",
+    "request_interval_seconds": 15.0,
+    "started_at": "2026-11-22T10:27:42.625583+00:00",
+    "cost_note": "Cost is calculated from Groq usage and the two GROQ_*_USD_PER_MILLION environment rates; null when rates or usage are unavailable."
+  },
+  "baseline": {
+    "metrics": {
+      "change_detection": {
+        "precision": 0.5625,
+        "recall": 1.0,
+        "true_positive": 45,
+        "false_positive": 35,
+        "false_negative": 0,
+        "true_negative": 0
+      },
+      "significance_classification": {
+        "precision": 0.4875,
+        "recall": 1.0,
+        "true_positive": 39,
+        "false_positive": 41,
+        "false_negative": 0,
+        "true_negative": 0
+      },
+      "status_accuracy": 0.4875,
+      "field_exact_match_rate": null
+    },
+    "run": {
+      "examples": 80,
+      "elapsed_seconds": 0.00018460012506693602,
+      "model_calls": 0,
+      "known_cost_usd": 0.0
+    },
+    "examples": [
+      {
+        "id": "01",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.100069291889668e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-7.7%)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "02",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 5.100038833916187e-06,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.07%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "03",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 4.400033503770828e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+8.3%)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "04",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.6499892808496952e-05,
+        "source_expected": "significant",
+        "note": "изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "05",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.9000144675374031e-06,
+        "source_expected": "significant",
+        "note": "изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "06",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.500019036233425e-06,
+        "source_expected": "significant",
+        "note": "изменение условий доставки",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "07",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.400018274784088e-06,
+        "source_expected": "significant",
+        "note": "изменение условий возврата",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "08",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.700012944638729e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (баннер), цена та же",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "09",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.700012944638729e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (отзывы)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "10",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.200016751885414e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (блок рекомендаций)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "11",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.200016751885414e-06,
+        "source_expected": "significant",
+        "note": "изменение условий акции (появилась скидка)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "12",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.00001522898674e-06,
+        "source_expected": "significant",
+        "note": "изменение условий акции (скидка убрана)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "13",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "14",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.800013706088066e-06,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (картинка)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "15",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.200016751885414e-06,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (диапазон)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "16",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.700020559132099e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены + структура сайта (пропал JSON-LD)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "17",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.3998942449688911e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (пропал JSON-LD), цена та же",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "18",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 3.300025127828121e-06,
+        "source_expected": "error",
+        "note": "исключительный: anti-bot заглушка",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "19",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.500011421740055e-06,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна (404 > 30 дней)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "20",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.800021320581436e-06,
+        "source_expected": "error",
+        "note": "исключительный: модель вернула невалидный формат (галлюцинация)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "21",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.3998942449688911e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-23%)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "22",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.600012183189392e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+14.5%)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "23",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (смена механики отображения)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "24",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.0998919606208801e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (итоговая выросла)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "25",
+        "expected_status": "significant",
+        "expected_fields": [
+          "product_status"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 5.600042641162872e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий (добавлен статус)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "26",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.09989957511425e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+100 руб.)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "27",
+        "expected_status": "significant",
+        "expected_fields": [
+          "currency",
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.500011421740055e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (смена валюты)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "28",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.00001522898674e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-20%)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "29",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.500011421740055e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "30",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.200009137392044e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (на границе порога)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "31",
+        "expected_status": "significant",
+        "expected_fields": [
+          "configuration"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.9000144675374031e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий (комплектация)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "32",
+        "expected_status": "significant",
+        "expected_fields": [
+          "payment_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.8998980522155762e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий оплаты",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "33",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "34",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "35",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "36",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия (дата)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "37",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.700012944638729e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (цвет), наличие не изменилось",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "38",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.200009137392044e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий получения",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "39",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.00001522898674e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "40",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "41",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.400010660290718e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "42",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.600012183189392e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий возврата",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "43",
+        "expected_status": "significant",
+        "expected_fields": [
+          "warranty_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 2.519995905458927e-05,
+        "source_expected": "significant",
+        "note": "значимое изменение условий гарантии",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "44",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.700012944638729e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "45",
+        "expected_status": "significant",
+        "expected_fields": [
+          "payment_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий оплаты",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "46",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 5.700043402612209e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "47",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение условий возврата",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "48",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "49",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.100008375942707e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "50",
+        "expected_status": "significant",
+        "expected_fields": [
+          "warranty_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение условий гарантии",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "51",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.6998965293169022e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (цвет кнопки)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "52",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.500011421740055e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (добавлен баннер)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "53",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (фото)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "54",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (отзывы)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "55",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.500011421740055e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (рекомендации)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "56",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (футер)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "57",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 3.600027412176132e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (шрифт)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "58",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.9000144675374031e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (виджет)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "59",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "noise",
+        "note": "изменение в структуре (рейтинг)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "60",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 7.00005330145359e-07,
+        "source_expected": "noise",
+        "note": "изменение в структуре (крошки)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "61",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.600012183189392e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (тег)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "62",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.600012183189392e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (SEO)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "63",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.200009137392044e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (часы работы)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "64",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 6.100046448409557e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (3D фото)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "65",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.100008375942707e-06,
+        "source_expected": "noise",
+        "note": "изменение в структуре (sku в JSON-LD)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "66",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "67",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "68",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-1%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "69",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.8%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "70",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.300009898841381e-06,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "71",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "72",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "73",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "74",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.00000761449337e-06,
+        "source_expected": "error",
+        "note": "исключительный: невалидный формат вывода",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "75",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.100008375942707e-06,
+        "source_expected": "error",
+        "note": "исключительный: невалидный формат вывода (null)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "76",
+        "expected_status": "significant",
+        "expected_fields": [
+          "currency",
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.200009137392044e-06,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (выдумал валюту)",
+        "field_exact_match": null,
+        "status_correct": true
+      },
+      {
+        "id": "77",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.6998965293169022e-06,
+        "source_expected": "error",
+        "note": "исключительный: anti-bot заглушка",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "78",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 1.100008375942707e-06,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "79",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 8.00006091594696e-07,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (JS)",
+        "field_exact_match": null,
+        "status_correct": false
+      },
+      {
+        "id": "80",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "significant",
+        "fields": [
+          "html"
+        ],
+        "error": null,
+        "model_calls": 0,
+        "cost_usd": 0.0,
+        "elapsed_seconds": 9.00006853044033e-07,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна (пустой HTML)",
+        "field_exact_match": null,
+        "status_correct": false
+      }
+    ]
+  },
+  "system": {
+    "metrics": {
+      "change_detection": {
+        "precision": 0.9512195121951219,
+        "recall": 0.8666666666666667,
+        "true_positive": 39,
+        "false_positive": 2,
+        "false_negative": 6,
+        "true_negative": 33
+      },
+      "significance_classification": {
+        "precision": 1.0,
+        "recall": 0.6410256410256411,
+        "true_positive": 25,
+        "false_positive": 0,
+        "false_negative": 14,
+        "true_negative": 41
+      },
+      "status_accuracy": 0.825,
+      "field_exact_match_rate": 0.8375
+    },
+    "run": {
+      "examples": 80,
+      "elapsed_seconds": 1086.6692460004706,
+      "model_calls": 66,
+      "known_cost_usd": null
+    },
+    "examples": [
+      {
+        "id": "01",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 893,
+        "output_tokens": 552,
+        "elapsed_seconds": 17.62576289998833,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-7.7%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "02",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 893,
+        "output_tokens": 605,
+        "elapsed_seconds": 16.782946499995887,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.07%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "03",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 893,
+        "output_tokens": 489,
+        "elapsed_seconds": 16.1423859000206,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+8.3%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "04",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 883,
+        "output_tokens": 436,
+        "elapsed_seconds": 16.032258699997328,
+        "source_expected": "significant",
+        "note": "изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "05",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 883,
+        "output_tokens": 545,
+        "elapsed_seconds": 16.26685399992857,
+        "source_expected": "significant",
+        "note": "изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "06",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 893,
+        "output_tokens": 707,
+        "elapsed_seconds": 16.926515600061975,
+        "source_expected": "significant",
+        "note": "изменение условий доставки",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "07",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "warranty_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 623,
+        "elapsed_seconds": 16.45328159991186,
+        "source_expected": "significant",
+        "note": "изменение условий возврата",
+        "field_exact_match": false,
+        "status_correct": true
+      },
+      {
+        "id": "08",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 892,
+        "output_tokens": 507,
+        "elapsed_seconds": 16.267882200074382,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (баннер), цена та же",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "09",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [
+          "price",
+          "currency"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 886,
+        "output_tokens": 652,
+        "elapsed_seconds": 17.517568800016306,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (отзывы)",
+        "field_exact_match": false,
+        "status_correct": true
+      },
+      {
+        "id": "10",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 893,
+        "output_tokens": 419,
+        "elapsed_seconds": 16.022095900028944,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (блок рекомендаций)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "11",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "significant",
+        "fields": [
+          "discount"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 895,
+        "output_tokens": 574,
+        "elapsed_seconds": 16.3831177999964,
+        "source_expected": "significant",
+        "note": "изменение условий акции (появилась скидка)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "12",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "discount"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 901,
+        "output_tokens": 540,
+        "elapsed_seconds": 16.505515499971807,
+        "source_expected": "significant",
+        "note": "изменение условий акции (скидка убрана)",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "13",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.013198900036513805,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "14",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.012437300058081746,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (картинка)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "15",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.010977400001138449,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (диапазон)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "16",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price",
+          "currency"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 886,
+        "output_tokens": 632,
+        "elapsed_seconds": 16.465381700079888,
+        "source_expected": "significant",
+        "note": "значимое изменение цены + структура сайта (пропал JSON-LD)",
+        "field_exact_match": false,
+        "status_correct": true
+      },
+      {
+        "id": "17",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [
+          "currency"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 887,
+        "output_tokens": 725,
+        "elapsed_seconds": 16.718851800076663,
+        "source_expected": "noise",
+        "note": "изменение в структуре сайта (пропал JSON-LD), цена та же",
+        "field_exact_match": false,
+        "status_correct": true
+      },
+      {
+        "id": "18",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.015950200031511486,
+        "source_expected": "error",
+        "note": "исключительный: anti-bot заглушка",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "19",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.013145400094799697,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна (404 > 30 дней)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "20",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.013771999976597726,
+        "source_expected": "error",
+        "note": "исключительный: модель вернула невалидный формат (галлюцинация)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "21",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 568,
+        "elapsed_seconds": 16.42239329998847,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-23%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "22",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 540,
+        "elapsed_seconds": 16.47335739992559,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+14.5%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "23",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "discount"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 890,
+        "output_tokens": 633,
+        "elapsed_seconds": 16.743270399980247,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (смена механики отображения)",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "24",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 895,
+        "output_tokens": 485,
+        "elapsed_seconds": 16.36830440000631,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (итоговая выросла)",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "25",
+        "expected_status": "significant",
+        "expected_fields": [
+          "product_status"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 892,
+        "output_tokens": 438,
+        "elapsed_seconds": 16.280818599974737,
+        "source_expected": "significant",
+        "note": "значимое изменение условий (добавлен статус)",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "26",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 589,
+        "elapsed_seconds": 17.021561000030488,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (+100 руб.)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "27",
+        "expected_status": "significant",
+        "expected_fields": [
+          "currency",
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "currency"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 693,
+        "elapsed_seconds": 16.59434950002469,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (смена валюты)",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "28",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 627,
+        "elapsed_seconds": 16.78826439997647,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (-20%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "29",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 895,
+        "output_tokens": 568,
+        "elapsed_seconds": 16.33540440001525,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "30",
+        "expected_status": "significant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 529,
+        "elapsed_seconds": 16.497435400029644,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (на границе порога)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "31",
+        "expected_status": "significant",
+        "expected_fields": [
+          "configuration"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 892,
+        "output_tokens": 567,
+        "elapsed_seconds": 16.39740180002991,
+        "source_expected": "significant",
+        "note": "значимое изменение условий (комплектация)",
+        "field_exact_match": false,
+        "status_correct": true
+      },
+      {
+        "id": "32",
+        "expected_status": "significant",
+        "expected_fields": [
+          "payment_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "payment_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 907,
+        "output_tokens": 612,
+        "elapsed_seconds": 16.738436399959028,
+        "source_expected": "significant",
+        "note": "значимое изменение условий оплаты",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "33",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 883,
+        "output_tokens": 535,
+        "elapsed_seconds": 16.234418499981984,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "34",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 594,
+        "elapsed_seconds": 16.50659700005781,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "35",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 882,
+        "output_tokens": 419,
+        "elapsed_seconds": 16.027201600023545,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "36",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 704,
+        "elapsed_seconds": 16.7353362001013,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия (дата)",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "37",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 346,
+        "elapsed_seconds": 16.301251800032333,
+        "source_expected": "noise",
+        "note": "изменение в структуре (цвет), наличие не изменилось",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "38",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 786,
+        "elapsed_seconds": 17.1040424000239,
+        "source_expected": "significant",
+        "note": "значимое изменение условий получения",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "39",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 602,
+        "elapsed_seconds": 16.466148999985307,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "40",
+        "expected_status": "significant",
+        "expected_fields": [
+          "availability"
+        ],
+        "status": "significant",
+        "fields": [
+          "availability"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 883,
+        "output_tokens": 564,
+        "elapsed_seconds": 16.767864999943413,
+        "source_expected": "significant",
+        "note": "значимое изменение наличия",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "41",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 670,
+        "elapsed_seconds": 16.742863800027408,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "42",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 543,
+        "elapsed_seconds": 16.242438600049354,
+        "source_expected": "significant",
+        "note": "значимое изменение условий возврата",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "43",
+        "expected_status": "significant",
+        "expected_fields": [
+          "warranty_conditions"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "warranty_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 890,
+        "output_tokens": 734,
+        "elapsed_seconds": 16.909217600012198,
+        "source_expected": "significant",
+        "note": "значимое изменение условий гарантии",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "44",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 890,
+        "output_tokens": 640,
+        "elapsed_seconds": 16.592875799979083,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "45",
+        "expected_status": "significant",
+        "expected_fields": [
+          "payment_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "payment_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 887,
+        "output_tokens": 608,
+        "elapsed_seconds": 16.703874200000428,
+        "source_expected": "significant",
+        "note": "значимое изменение условий оплаты",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "46",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "discount"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 891,
+        "output_tokens": 540,
+        "elapsed_seconds": 16.33596930000931,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "47",
+        "expected_status": "significant",
+        "expected_fields": [
+          "return_conditions"
+        ],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 887,
+        "output_tokens": 405,
+        "elapsed_seconds": 16.05561309994664,
+        "source_expected": "significant",
+        "note": "значимое изменение условий возврата",
+        "field_exact_match": false,
+        "status_correct": false
+      },
+      {
+        "id": "48",
+        "expected_status": "significant",
+        "expected_fields": [
+          "delivery_conditions"
+        ],
+        "status": "significant",
+        "fields": [
+          "delivery_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 696,
+        "elapsed_seconds": 16.71685470000375,
+        "source_expected": "significant",
+        "note": "значимое изменение условий доставки",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "49",
+        "expected_status": "significant",
+        "expected_fields": [
+          "discount"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "discount"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 891,
+        "output_tokens": 609,
+        "elapsed_seconds": 16.454387100064196,
+        "source_expected": "significant",
+        "note": "значимое изменение условий акции",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "50",
+        "expected_status": "significant",
+        "expected_fields": [
+          "warranty_conditions"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "warranty_conditions"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 888,
+        "output_tokens": 560,
+        "elapsed_seconds": 16.38600089994725,
+        "source_expected": "significant",
+        "note": "значимое изменение условий гарантии",
+        "field_exact_match": true,
+        "status_correct": false
+      },
+      {
+        "id": "51",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 879,
+        "output_tokens": 366,
+        "elapsed_seconds": 16.53637450002134,
+        "source_expected": "noise",
+        "note": "изменение в структуре (цвет кнопки)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "52",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 886,
+        "output_tokens": 438,
+        "elapsed_seconds": 16.202234599972144,
+        "source_expected": "noise",
+        "note": "изменение в структуре (добавлен баннер)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "53",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 878,
+        "output_tokens": 326,
+        "elapsed_seconds": 16.787648700061254,
+        "source_expected": "noise",
+        "note": "изменение в структуре (фото)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "54",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 882,
+        "output_tokens": 377,
+        "elapsed_seconds": 15.938554299995303,
+        "source_expected": "noise",
+        "note": "изменение в структуре (отзывы)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "55",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 306,
+        "elapsed_seconds": 17.4822924999753,
+        "source_expected": "noise",
+        "note": "изменение в структуре (рекомендации)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "56",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 883,
+        "output_tokens": 441,
+        "elapsed_seconds": 16.050140199949965,
+        "source_expected": "noise",
+        "note": "изменение в структуре (футер)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "57",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 878,
+        "output_tokens": 316,
+        "elapsed_seconds": 15.898992599919438,
+        "source_expected": "noise",
+        "note": "изменение в структуре (шрифт)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "58",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 882,
+        "output_tokens": 391,
+        "elapsed_seconds": 16.29976490000263,
+        "source_expected": "noise",
+        "note": "изменение в структуре (виджет)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "59",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 884,
+        "output_tokens": 392,
+        "elapsed_seconds": 16.19935789995361,
+        "source_expected": "noise",
+        "note": "изменение в структуре (рейтинг)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "60",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 885,
+        "output_tokens": 401,
+        "elapsed_seconds": 16.407302399980836,
+        "source_expected": "noise",
+        "note": "изменение в структуре (крошки)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "61",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 882,
+        "output_tokens": 343,
+        "elapsed_seconds": 15.832611600053497,
+        "source_expected": "noise",
+        "note": "изменение в структуре (тег)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "62",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 882,
+        "output_tokens": 371,
+        "elapsed_seconds": 15.899998600012623,
+        "source_expected": "noise",
+        "note": "изменение в структуре (SEO)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "63",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 887,
+        "output_tokens": 507,
+        "elapsed_seconds": 16.166545300045982,
+        "source_expected": "noise",
+        "note": "изменение в структуре (часы работы)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "64",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 878,
+        "output_tokens": 377,
+        "elapsed_seconds": 15.903150899917819,
+        "source_expected": "noise",
+        "note": "изменение в структуре (3D фото)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "65",
+        "expected_status": "insignificant",
+        "expected_fields": [],
+        "status": "insignificant",
+        "fields": [],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 878,
+        "output_tokens": 417,
+        "elapsed_seconds": 16.043732300051488,
+        "source_expected": "noise",
+        "note": "изменение в структуре (sku в JSON-LD)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "66",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 561,
+        "elapsed_seconds": 16.383654100005515,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "67",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 583,
+        "elapsed_seconds": 16.67641569999978,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "68",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 887,
+        "output_tokens": 517,
+        "elapsed_seconds": 16.406386899994686,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-1%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "69",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 889,
+        "output_tokens": 557,
+        "elapsed_seconds": 16.277781400014646,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.8%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "70",
+        "expected_status": "insignificant",
+        "expected_fields": [
+          "price"
+        ],
+        "status": "insignificant",
+        "fields": [
+          "price"
+        ],
+        "error": null,
+        "model_calls": 2,
+        "cost_usd": null,
+        "input_tokens": 2059,
+        "output_tokens": 905,
+        "elapsed_seconds": 32.320867000031285,
+        "source_expected": "noise",
+        "note": "незначительное изменение цены (-0.7%)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "71",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.012527999933809042,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "72",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.006803099997341633,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "73",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.006512499996460974,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "74",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.006248000077903271,
+        "source_expected": "error",
+        "note": "исключительный: невалидный формат вывода",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "75",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.00612629996612668,
+        "source_expected": "error",
+        "note": "исключительный: невалидный формат вывода (null)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "76",
+        "expected_status": "significant",
+        "expected_fields": [
+          "currency",
+          "price"
+        ],
+        "status": "significant",
+        "fields": [
+          "price",
+          "currency"
+        ],
+        "error": null,
+        "model_calls": 1,
+        "cost_usd": null,
+        "input_tokens": 886,
+        "output_tokens": 688,
+        "elapsed_seconds": 16.73817330005113,
+        "source_expected": "significant",
+        "note": "значимое изменение цены (выдумал валюту)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "77",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.012284700060263276,
+        "source_expected": "error",
+        "note": "исключительный: anti-bot заглушка",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "78",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.011239499901421368,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "79",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Too little visible page content",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.011091700056567788,
+        "source_expected": "error",
+        "note": "исключительный: цена не найдена (JS)",
+        "field_exact_match": true,
+        "status_correct": true
+      },
+      {
+        "id": "80",
+        "expected_status": "error",
+        "expected_fields": [],
+        "status": "error",
+        "fields": [],
+        "error": "RuntimeError: Page validation failed: Empty HTML",
+        "model_calls": 0,
+        "cost_usd": null,
+        "elapsed_seconds": 0.010578799992799759,
+        "source_expected": "error",
+        "note": "исключительный: страница недоступна (пустой HTML)",
+        "field_exact_match": true,
+        "status_correct": true
+      }
+    ]
+  }
+}
