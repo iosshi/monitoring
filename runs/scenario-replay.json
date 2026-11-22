@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "harness_version": "1.0.0",
+    "model": "scripted-fixtures",
+    "started_at": "2026-11-19T13:09:04.191328+00:00",
+    "note": "Workflow behavior only; not a model-quality result."
+  },
+  "scenarios": [
+    {
+      "scenario": "dependent_price_change",
+      "max_steps": 3,
+      "planned_steps": 2,
+      "executed_steps": 2,
+      "deferred_steps": 0,
+      "passed": true,
+      "elapsed_seconds": 0.0011508999741636217,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "920",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scenario": "cosmetic_html_change",
+      "max_steps": 3,
+      "planned_steps": 2,
+      "executed_steps": 2,
+      "deferred_steps": 0,
+      "passed": true,
+      "elapsed_seconds": 0.0005729999975301325,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "insignificant",
+          "status": "insignificant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scenario": "fetch_failure_mid_chain",
+      "max_steps": 4,
+      "planned_steps": 3,
+      "executed_steps": 3,
+      "deferred_steps": 0,
+      "passed": true,
+      "elapsed_seconds": 0.0008193000103347003,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "error",
+          "status": "error",
+          "snapshot_price_before": "1000",
+          "error": "RuntimeError: HTTP 503 fixture failure",
+          "snapshot_retained": true,
+          "passed": true
+        },
+        {
+          "step": "day-3",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "900",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scenario": "contradictory_reversal",
+      "max_steps": 4,
+      "planned_steps": 3,
+      "executed_steps": 3,
+      "deferred_steps": 0,
+      "passed": true,
+      "elapsed_seconds": 0.0008391999872401357,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "900",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-3",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "900",
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scenario": "step_budget_exhaustion",
+      "max_steps": 3,
+      "planned_steps": 5,
+      "executed_steps": 3,
+      "deferred_steps": 2,
+      "passed": true,
+      "elapsed_seconds": 0.0007380999741144478,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "insignificant",
+          "status": "insignificant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "970",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-3",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "970",
+          "snapshot_price_after": "900",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "scenario": "availability_round_trip",
+      "max_steps": 4,
+      "planned_steps": 3,
+      "executed_steps": 3,
+      "deferred_steps": 0,
+      "passed": true,
+      "elapsed_seconds": 0.0007778999861329794,
+      "outcomes": [
+        {
+          "step": "day-1",
+          "expected_status": "initialized",
+          "status": "initialized",
+          "snapshot_price_before": null,
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-2",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "out of stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        },
+        {
+          "step": "day-3",
+          "expected_status": "significant",
+          "status": "significant",
+          "snapshot_price_before": "1000",
+          "snapshot_price_after": "1000",
+          "snapshot_availability_after": "in stock",
+          "snapshot_matches_expected": true,
+          "passed": true,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

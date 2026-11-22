@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+    "product_description": "Книга A Light in the Attic",
+    "significance_criteria": [
+      "Изменение цены на 5% и более считается значимым",
+      "Изменение наличия считается значимым"
+    ],
+    "fetch_mode": "requests"
+  },
+  {
+    "url": "https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html",
+    "product_description": "Книга Tipping the Velvet",
+    "significance_criteria": [
+      "Изменение цены на 5% и более считается значимым",
+      "Изменение наличия считается значимым"
+    ],
+    "fetch_mode": "requests"
+  }
+]
